@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { ProjectAdditionForm, ProjectSection } from "./data/components/projects"
+import Theme from "./data/components/theme"
+import Todo from "./data/components/todo"
+import Main from "./data/Main"
+import Provider from "./data/services/provider"
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Provider>
+    <BrowserRouter>
+    <Theme>
+      <Routes>
+        <Route path='*' element={<Main/>}>
+          <Route path="projects/*" element={<ProjectSection/>}>
+            <Route path="add-new-project" element={<ProjectAdditionForm/>}></Route>
+          </Route>
+          <Route path="todo" element={<Todo/>}></Route>
+        </Route>
+      </Routes>
+    </Theme>
+    </BrowserRouter>
+    </Provider>
+  )
 }
 
-export default App;
+export default App
