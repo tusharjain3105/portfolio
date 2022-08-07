@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react"
-import { MdAdd } from "react-icons/md"
 import { NavLink } from "react-router-dom"
 import styled from "styled-components"
 import If from "./ifelse"
@@ -42,7 +40,6 @@ const Tabs = ({ align = 'left', items = [], selected = 0, onChange = (value: num
                         <Tab >{item.title}</Tab>
                     </NavLink>
             )}
-            {/* <Tab className="blank"/> */}
             <If condition={align === 'left' || align === 'center'} onPass={<Tab className="blank" />} />
             <NavLink to='add-new-project'>
                 <Tab >Add new project</Tab>

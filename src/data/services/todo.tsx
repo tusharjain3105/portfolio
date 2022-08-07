@@ -57,7 +57,7 @@ const TodoProvider = ({ children }) => {
             return false;
         },
         changeSelected: (title: string, value: boolean) => {
-            if (selected[title] != value)
+            if (selected[title] !== value)
                 selected[title] = value
             setSelected({ ...selected })
         },

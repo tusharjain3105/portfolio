@@ -1,5 +1,5 @@
-import { useContext, useEffect, useMemo, useRef, useState } from "react"
-import { MdAdd, MdEdit, MdRemoveRedEye, MdSmartDisplay } from "react-icons/md"
+import { useContext, useEffect, useState } from "react"
+import { MdAdd, MdEdit, } from "react-icons/md"
 import styled from "styled-components"
 import { TodoContext } from "../services/todo"
 import Buttons from "./buttons"
